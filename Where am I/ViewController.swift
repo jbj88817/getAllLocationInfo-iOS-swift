@@ -57,6 +57,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                     
                     var subThoroughfare:String = ""
                     var subLocality:String = ""
+                    var thoroughfare:String = ""
+                    var subAdministrativeArea:String = ""
+                    var postalCode:String = ""
+                    var country:String = ""
                     
                     if p.subThoroughfare != nil{
                         subThoroughfare = p.subThoroughfare!
@@ -64,9 +68,20 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                     
                     if p.subLocality != nil{
                         subLocality = p.subLocality!
-                        
                     }
-                    self.addressLabel.text = "\(subThoroughfare) \(p.thoroughfare!) \n \(subLocality)\(p.subAdministrativeArea!)\n\(p.postalCode!)\n\(p.country!)"
+                    if p.thoroughfare != nil{
+                        thoroughfare = p.thoroughfare!
+                    }
+                    if p.subAdministrativeArea != nil{
+                        subAdministrativeArea = p.subAdministrativeArea!
+                    }
+                    if p.postalCode != nil{
+                        postalCode = p.postalCode!
+                    }
+                    if p.country != nil{
+                        country = p.country!
+                    }
+                    self.addressLabel.text = "\(subThoroughfare) \(thoroughfare) \n \(subLocality)\(subAdministrativeArea)\n\(postalCode)\n\(country)"
                 }
                 
                 
